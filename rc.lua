@@ -565,3 +565,4 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 awful.spawn.with_shell("feh --bg-scale ~/gentoo.tiff")
 awful.spawn.with_shell("nm-applet")
 awful.spawn.with_shell("xfce4-clipman")
+awful.spawn.with_shell("blueman-applet")

@@ -567,4 +567,4 @@ awful.spawn.with_shell("nm-applet")
 awful.spawn.with_shell("xfce4-clipman")
 awful.spawn.with_shell("blueman-applet")
 awful.spawn.with_shell("/usr/libexec/polkit-mate-authentication-agent-1")
-awful.spawn.with_shell("cairo-dock -o &") -- yes i have to compile it, pray for this shit won't blow up
+awful.spawn.with_shell("pgrep -x cairo-dock || cairo-dock -o") -- yes i have to compile it, pray for this shit won't blow up

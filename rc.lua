@@ -104,10 +104,12 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 
 -- Keyboard map indicator and switcher
 mykeyboardlayout = awful.widget.keyboardlayout()
-
+awful.key({ modkey }, "space", function()
+    awful.spawn("setxkbmap -layout us,ar -variant ,sa -option grp:alt_shift_toggle")
+end, {description = "toggle keyboard layout", group = "keyboard"})
 -- {{{ Wibar
 -- Create a textclock widget
-mytextclock = wibox.widget.textclock("%I:%M %p")
+mytextclock = wibox.widget.textclock("%a %b %d, %I:%M %p")
 
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
@@ -567,4 +569,4 @@ awful.spawn.with_shell("nm-applet")
 awful.spawn.with_shell("xfce4-clipman")
 awful.spawn.with_shell("blueman-applet")
 awful.spawn.with_shell("/usr/libexec/polkit-mate-authentication-agent-1")
-awful.spawn.with_shell("pgrep -x cairo-dock || cairo-dock -o") -- yes i have to compile it, pray for this shit won't blow up
+awful.spawn.with_shell("cairo-dock -o &")
